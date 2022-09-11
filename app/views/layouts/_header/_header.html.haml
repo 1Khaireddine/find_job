@@ -1,0 +1,41 @@
+%header#header.header.fixed-top.d-flex.align-items-center
+  .d-flex.align-items-center.justify-content-between
+    %a.logo.d-flex.align-items-center{:href => "#"}
+      %img{:alt => "", :src => "assets/logo.png"}/
+      %span.d-none.d-lg-block FindJob
+  .search-bar
+    %form.search-form.d-flex.align-items-center{:action => "#", :method => "POST"}
+      %input{:name => "query", :placeholder => "Search", :title => "Enter search keyword", :type => "text"}/
+      %button{:title => "Search", :type => "submit"}
+        %i.fa-solid.fa-magnifying-glass
+  %nav.header-nav.ms-auto
+    %ul.d-flex.align-items-center
+      %li.nav-item.d-block.d-lg-none
+        %a.nav-link.nav-icon.search-bar-toggle{:href => "#"}
+          %i.bi.bi-search
+      %li.nav-item.dropdown.pe-3
+        %a.nav-link.nav-profile.d-flex.align-items-center.pe-0{"data-bs-toggle" => "dropdown", :href => "#"}
+          %img.rounded-circle{:alt => "Profile", :src => "assets/profile-img.jpg"}/
+          %span.d-none.d-md-block.dropdown-toggle.ps-2 H. Khaireddine
+        %ul.dropdown-menu.dropdown-menu-end.dropdown-menu-arrow.profile
+          %li.dropdown-header
+            %h6 Hamdi Khaireddine
+            %span Web Developer
+          %li
+            %hr.dropdown-divider/
+          %li
+            %a.dropdown-item.d-flex.align-items-center{:href => "#"}
+              %i.bi.bi-person
+              %span My Profile
+          %li
+            %hr.dropdown-divider/
+          %li
+            %a.dropdown-item.d-flex.align-items-center{:href => "#"}
+              %i.bi.bi-gear
+              %span Account Settings
+          %li
+            %hr.dropdown-divider/
+          %li
+            %a.dropdown-item.d-flex.align-items-center{:href => "#"}
+              %i.bi.bi-box-arrow-right
+              %span Sign Out
