@@ -8,6 +8,13 @@ class User < ApplicationRecord
   scope :is_archived, -> { where(is_archived: true) }
   enum :role, { admin: 0, technician: 1 }
 
+  ## Avatar Attachment
+  has_one_attached :avatar
+
+  ## Validations
+  validates :avatar, file_size: { less_than_or_equal_to: 5.megabytes },
+                     file_content_type: { allow: ['image/jpeg', 'image/png', 'image/gif'] }
+
   def full_name
     "#{first_name} #{last_name}"
   end
