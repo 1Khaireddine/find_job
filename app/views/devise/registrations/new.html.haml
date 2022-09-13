@@ -1,0 +1,26 @@
+%section.section.register-login.d-flex.flex-column.align-items-center.justify-content-center.py-5
+  .container
+    .row.justify-content-center
+      .col-lg-4.col-md-6.d-flex.flex-column.align-items-center.justify-content-center
+        .card
+          .card-body
+            .pt-4.pb-2
+              %h5.card-title.text-center.pb-0.fs-4 Create an Account
+              %p.text-center.small Enter your personal details to create account
+            = form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class:"row g-3 needs-validation"}) do |f|
+              = render "devise/shared/error_messages", resource: resource
+              .col-12.mb-3
+                = f.label :email, class: "form-label"
+                = f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control"
+              .col-12.mb-3
+                = f.label :password, class: "form-label"
+                = f.password_field :password, autocomplete: "new-password", class: "form-control"
+              .col-12.mb-3
+                = f.label :password_confirmation, class: "form-label"
+                = f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control"
+              .col-12
+                %button.btn.btn-primary.w-100{:type => "submit"} Create Account
+          .card-footer
+            .col-12
+              .cover-reset-links
+                = render "devise/shared/links"

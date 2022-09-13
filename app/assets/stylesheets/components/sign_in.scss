@@ -1,0 +1,20 @@
+.register-login {
+  .card {
+    .card-body {
+      margin-bottom: 15px;
+    }
+
+    .card-footer {
+      .cover-reset-links {
+        a {
+          font-size: 14px;
+          display: block;
+          font-weight: 300;
+          line-height: 20px;
+          text-decoration: none;
+          font-family: $secondary-font;
+        }
+      }
+    }
+  }
+}

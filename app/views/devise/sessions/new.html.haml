@@ -1,0 +1,29 @@
+%section.section.register-login.d-flex.flex-column.align-items-center.justify-content-center.py-5
+  .container
+    .row.justify-content-center
+      .col-lg-4.col-md-6.d-flex.flex-column.align-items-center.justify-content-center
+        .card
+          .card-body
+            .pt-4.pb-2
+              %h5.card-title.text-center.pb-0.fs-4 Login to Your Account
+              %p.text-center.small Enter your username & password to login
+            = form_for(resource, as: resource_name, url: session_path(resource_name), html: {class:"row g-3 needs-validation"}) do |f|
+              .col-12.mb-3
+                %label.form-label{:for => "yourUsername"} Username
+                .input-group.has-validation
+                  = f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control"
+                  .invalid-feedback Please enter your username.
+              .col-12.mb-3
+                %label.form-label{:for => "yourPassword"} Password
+                = f.password_field :password, autocomplete: "current-password", class: "form-control"
+                .invalid-feedback Please enter your password!
+              .col-12
+                .form-check
+                  = f.check_box :remember_me, class: "form-check-input"
+                  = f.label :remember_me, class: "form-check-label"
+              .col-12
+                %button.btn.btn-primary.w-100{:type => "submit"} Login
+          .card-footer
+            .col-12
+              .cover-reset-links
+                = render "devise/shared/links"

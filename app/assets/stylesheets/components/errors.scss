@@ -1,0 +1,20 @@
+.error-explanation {
+  padding: 7px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  font-family: $secondary-font;
+  background-color: $danger-back-light;
+  .error-title {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .errors-list {
+    padding: 0;
+    .error-item {
+      font-size: .85rem;
+      line-height: 24px;
+      font-weight: 300;
+    }
+  }
+}
