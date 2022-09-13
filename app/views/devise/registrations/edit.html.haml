@@ -1,0 +1,32 @@
+%section.section.register-login.d-flex.flex-column.align-items-center.justify-content-center.py-5
+  .container
+    .row.justify-content-center
+      .col-lg-4.col-md-6.d-flex.flex-column.align-items-center.justify-content-center
+        .card
+          .card-body
+            .pt-4.pb-2
+              %h5.card-title.text-center.pb-0.fs-4
+                Edit #{resource_name.to_s.humanize}
+            = form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class:"row g-3 needs-validation", method: :put}) do |f|
+              = render "devise/shared/error_messages", resource: resource
+              .col-12.mb-3
+                = f.label :email, class: "form-label"
+                = f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control"
+              .col-12.mb-3
+                = f.label :password, class: "form-label"
+                = f.password_field :password, autocomplete: "new-password", class: "form-control"
+              .col-12.mb-3
+                = f.label :password_confirmation, class: "form-label"
+                = f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control"
+              .col-12.mb-3
+                = f.label :current_password, class: "form-label"
+                = f.password_field :current_password, autocomplete: "new-password", class: "form-control"
+              .col-12
+                %button.btn.btn-primary.w-100{:type => "submit"} Update
+          .card-footer
+            .col-12
+              .row
+                .col-sm-6
+                  = link_to "Back", :back, class: "btn btn-success w-100"
+                .col-sm-6
+                  = button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger w-100"
