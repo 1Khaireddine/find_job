@@ -4,9 +4,9 @@
 //= require bootstrap-sprockets
 //= require_tree
 
-// $(document).ready(function () {
-//   setTimeout(() => {
-//     $(".notice").remove()
-//     $(".alert").remove()
-//   }, 3000);
-// })
+$(document).ready(function () {
+  setTimeout(() => {
+    $(".notice").remove()
+    $(".alert").remove()
+  }, 3000);
+})

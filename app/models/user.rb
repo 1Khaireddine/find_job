@@ -6,6 +6,7 @@ class User < ApplicationRecord
          :confirmable, :trackable
 
   scope :is_archived, -> { where(is_archived: true) }
+  enum :gender, { male: 0, female: 1 }
   enum :role, { admin: 0, technician: 1 }
 
   ## Avatar Attachment
