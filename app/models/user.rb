@@ -9,6 +9,8 @@ class User < ApplicationRecord
   enum :gender, { male: 0, female: 1 }
   enum :role, { admin: 0, technician: 1 }
 
+  belongs_to :user, optional: true
+
   ## Avatar Attachment
   has_one_attached :avatar
 
